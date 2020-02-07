@@ -6,7 +6,7 @@ const apis = () => {
 
   router.get("/api/data", async (req, res) => {
     try {
-      return res.json({ sucess: true, payload: data });
+      return res.json({ success: true, payload: data });
     } catch (error) {
       return res.json({ success: false, payload: {} });
     }
