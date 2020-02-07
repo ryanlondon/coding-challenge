@@ -3,19 +3,25 @@
  */
 
 import React, { useEffect } from "react";
-
+import ArtworksConnector from "../connectors/Artworks";
 import { ArtworkList, ListItems } from "./styles";
-// import ArtworkItem from "./ArtworkItem";
+import ArtworkItem from "./ArtworkItem";
 
-export default () => (
-  <ArtworkList>
-    <h1>Original Art for Sale</h1>
+export default ArtworksConnector(({ artworks, fetchArtworksData }) => {
+  useEffect(() => {
+    fetchArtworksData();
+  }, []);
 
-    <ListItems>
-      <p>
-        Load Artworks via AJAX, Pull into Redux Store, and display each artworks
-        data in a 'ArtworkItem'
-      </p>
-    </ListItems>
-  </ArtworkList>
-);
+  return (
+    <ArtworkList>
+      <h1>Original Art for Sale</h1>
+      <span>{`(${artworks ? artworks.length : 0} Artworks)`}</span>
+      <ListItems>
+        {artworks &&
+          artworks.map(artwork => (
+            <ArtworkItem key={artwork.artId} data={artwork} />
+          ))}
+      </ListItems>
+    </ArtworkList>
+  );
+});

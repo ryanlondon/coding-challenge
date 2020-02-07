@@ -13,10 +13,11 @@ const reducer = (state = initialState, action) => {
   switch (action.type) {
     case "SET_PAGE_DATA":
       return { ...state, ...action.payload };
+    case "SET_ARTWORKS_DATA":
+      return { ...state, artworks: action.payload };
     default:
       return state;
   }
-  return state;
 };
 
 export default reducer;

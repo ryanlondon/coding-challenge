@@ -5,7 +5,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import MyConnector from "../connectors/MyConnector";
+// import MyConnector from "../connectors/MyConnector";
 
 import {
   ArtworkItem,
