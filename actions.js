@@ -17,3 +17,8 @@ export const fetchArtworksData = () => async dispatch => {
     console.error("Error while fetching artworks data:", err.message);
   }
 };
+
+export const searchArtworksByTitle = searchText => ({
+  type: "SEARCH_ARTWORKS_BY_TITLE",
+  payload: searchText
+});

@@ -15,6 +15,8 @@ const reducer = (state = initialState, action) => {
       return { ...state, ...action.payload };
     case "SET_ARTWORKS_DATA":
       return { ...state, artworks: action.payload };
+    case "SEARCH_ARTWORKS_BY_TITLE":
+      return { ...state, search: action.payload };
     default:
       return state;
   }
