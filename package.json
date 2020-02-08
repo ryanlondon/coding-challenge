@@ -4,6 +4,14 @@
   "main": "server.js",
   "author": "Matthew Otto <matt@ottoinfo.com> (http://ottoinfo.com/)",
   "license": "MIT",
+  "scripts": {
+    "dev": "yarn && node server.js",
+    "build": "next build",
+    "test": "jest"
+  },
+  "jest": {
+    "verbose": true
+  },
   "dependencies": {
     "@babel/core": "^7.8.4",
     "babel-plugin-styled-components": "^1.10.7",
@@ -23,9 +31,7 @@
     "redux-thunk": "^2.3.0",
     "styled-components": "^5.0.0"
   },
-  "scripts": {
-    "dev": "yarn && node server.js",
-    "build": "next build"
-  },
-  "devDependencies": {}
+  "devDependencies": {
+    "jest": "^25.1.0"
+  }
 }
