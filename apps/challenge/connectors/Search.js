@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { searchArtworksByTitle } from "../../../actions";
+import { searchArtworksByTitle } from "../actions";
 
 const mapDispatchToProps = dispatch => ({
   searchArtworksByTitle: text => dispatch(searchArtworksByTitle(text))

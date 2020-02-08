@@ -1,4 +1,4 @@
-import * as helpers from "../helpers";
+import * as helpers from "../apps/challenge/actions/helpers";
 
 describe("filter artworks by title", () => {
   let fakeArtworks;

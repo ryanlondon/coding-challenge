@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { toggleFavorite } from "../../../actions";
+import { toggleFavorite } from "../actions";
 
 const mapStateToProps = ({ favorites }, { data }) => ({
   isFavorited: favorites[data.artId] === true

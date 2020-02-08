@@ -1,5 +1,5 @@
 import { createStore, applyMiddleware } from "redux";
-import { writeFavoritesToLocalStorage } from "./helpers";
+import { writeFavoritesToLocalStorage } from "./apps/challenge/actions/helpers";
 import { composeWithDevTools } from "redux-devtools-extension/developmentOnly";
 import thunk from "redux-thunk";
 

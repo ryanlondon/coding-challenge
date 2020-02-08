@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
-import { filterArtworksByTitle } from "../../../helpers";
-import { fetchArtworksData, fetchFavoritesData } from "../../../actions";
+import { filterArtworksByTitle } from "../actions/helpers";
+import { fetchArtworksData, fetchFavoritesData } from "../actions";
 
 const mapStateToProps = ({ artworks, search }) => ({
   artworks: filterArtworksByTitle(artworks, search)

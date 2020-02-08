@@ -1,5 +1,4 @@
 // import { combineReducers } from "redux";
-import { writeFavoritesToLocalStorage } from "./helpers";
 
 export const initialState = {
   name: "", // App Name
