@@ -1,3 +1,5 @@
+import * as helpers from "./helpers";
+
 export const fetchArtworksData = () => async dispatch => {
   const url = `${process.env.APP_DOMAIN}/api/data`;
   const options = {
@@ -21,4 +23,17 @@ export const fetchArtworksData = () => async dispatch => {
 export const searchArtworksByTitle = searchText => ({
   type: "SEARCH_ARTWORKS_BY_TITLE",
   payload: searchText
+});
+
+export const fetchFavoritesData = () => async dispatch => {
+  const favoritesMap = helpers.getFavoritesMapFromLocalStorage();
+  dispatch({
+    type: "SET_FAVORITES_DATA",
+    payload: favoritesMap
+  });
+};
+
+export const toggleFavorite = artId => ({
+  type: "TOGGLE_FAVORITE",
+  payload: artId
 });

@@ -10,7 +10,10 @@
     "test": "jest"
   },
   "jest": {
-    "verbose": true
+    "verbose": true,
+    "setupFiles": [
+      "./test_utils/browserMocks.js"
+    ]
   },
   "dependencies": {
     "@babel/core": "^7.8.4",

@@ -3,9 +3,7 @@
  */
 
 import React from "react";
-import styled from "styled-components";
-
-// import MyConnector from "../connectors/MyConnector";
+import ArtworkItemConnector from "../connectors/ArtworkItem";
 
 import {
   ArtworkItem,
@@ -18,8 +16,7 @@ import {
   Title
 } from "./styles/artworkItem";
 
-export default props => {
-  const { data } = props;
+export default ArtworkItemConnector(({ data, isFavorited, toggleFavorite }) => {
   if (!data) {
     return <p>Please set ArtworkItems into a attribute of `data`</p>;
   }
@@ -35,12 +32,20 @@ export default props => {
     category,
     product
   } = data;
-  const isFavorited = false;
+
+  const handleFavoriteClick = () => {
+    toggleFavorite(artId);
+  };
+
   return (
     <ArtworkItem>
       <ImageWrapper>
         <img src={imageUrl} />
-        <Favicon isFavorited={isFavorited} className="fa fa-heart" />
+        <Favicon
+          onClick={handleFavoriteClick}
+          isFavorited={isFavorited}
+          className="fa fa-heart"
+        />
       </ImageWrapper>
       <Info>
         <Title>
@@ -76,4 +81,4 @@ export default props => {
       </Info>
     </ArtworkItem>
   );
-};
+});

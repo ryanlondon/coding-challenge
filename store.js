@@ -1,4 +1,5 @@
 import { createStore, applyMiddleware } from "redux";
+import { writeFavoritesToLocalStorage } from "./helpers";
 import { composeWithDevTools } from "redux-devtools-extension/developmentOnly";
 import thunk from "redux-thunk";
 
@@ -12,6 +13,9 @@ export default preloadedState => {
       preloadedState,
       composeWithDevTools(applyMiddleware(thunk))
     );
+    store.subscribe(() => {
+      writeFavoritesToLocalStorage(store.getState().favorites);
+    });
   } else {
     store = createStore(rootReducer, preloadedState);
   }

@@ -1,4 +1,5 @@
 // import { combineReducers } from "redux";
+import { writeFavoritesToLocalStorage } from "./helpers";
 
 export const initialState = {
   name: "", // App Name
@@ -17,6 +18,12 @@ const reducer = (state = initialState, action) => {
       return { ...state, artworks: action.payload };
     case "SEARCH_ARTWORKS_BY_TITLE":
       return { ...state, search: action.payload };
+    case "SET_FAVORITES_DATA":
+      return { ...state, favorites: action.payload };
+    case "TOGGLE_FAVORITE":
+      const favorites = { ...state.favorites };
+      favorites[action.payload] = !favorites[action.payload];
+      return { ...state, favorites };
     default:
       return state;
   }
